@@ -1,0 +1,100 @@
+{
+  "name": "konect-hub",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://hub.konect.id",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/rubik": "^4.5.14",
+    "@headlessui/react": "^1.7.14",
+    "@material-tailwind/react": "^1.4.2",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.7",
+    "@mui/styled-engine-sc": "^5.11.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tanstack/react-query": "^4.29.25",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.5",
+    "chart.js": "^4.2.1",
+    "cropperjs": "^1.5.13",
+    "daisyui": "^2.51.3",
+    "file-saver": "^2.0.5",
+    "firebase": "^9.16.0",
+    "formik": "^2.4.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-cropper": "^2.3.3",
+    "react-currency-format": "^1.1.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-hot-loader": "^4.13.1",
+    "react-icons": "^4.7.1",
+    "react-image-crop": "^10.0.9",
+    "react-lazy-load": "^4.0.1",
+    "react-multi-date-picker": "^3.3.4",
+    "react-number-format": "^5.1.4",
+    "react-paginate": "^8.1.4",
+    "react-responsive": "^9.0.2",
+    "react-router-dom": "^6.8.0",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.7.2",
+    "react-toastify": "^9.1.1",
+    "styled-components": "^5.3.6",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "twin.macro": "^3.3.1",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5",
+    "yup": "^1.2.0",
+    "zustand": "^4.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "restart": "react-scripts restart"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@tinymce/tinymce-react": "^4.3.0",
+    "autoprefixer": "^10.4.14",
+    "babel-plugin-styled-components": "^2.1.4",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.3.3",
+    "tailwindcss-debug-screens": "^2.2.1",
+    "tailwindcss-font-inter": "^3.0.1"
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components",
+      "config": "tailwind.config.js"
+    }
+  },
+  "babel": {
+    "plugins": [
+      "react-hot-loader/babel"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', 'Rubik', sans-serif;
+}
+
+input[type='radio'] + label span {
+  transition: background 0.2s, transform 0.2s;
+}
+
+input[type='radio'] + label span:hover,
+input[type='radio'] + label:hover span {
+  transform: scale(1.2);
+}
+
+input[type='radio']:checked + label span {
+  background-color: #00cdb4;
+  box-shadow: 0px 0px 0px 2px white inset;
+}
+
+input[type='radio']:checked + label {
+  color: #00cdb4;
+}
+
+input[type='checkbox'] + label span {
+  transition: background 0.2s, transform 0.2s;
+}
+
+input[type='checkbox'] + label span:hover,
+input[type='checkbox'] + label:hover span {
+  transform: scale(1.2);
+}
+
+input[type='checkbox']:checked + label span {
+  background-color: #00cdb4;
+  box-shadow: 0px 0px 0px 2px white inset;
+}
+
+input[type='checkbox']:checked + label {
+  color: #00cdb4;
+}

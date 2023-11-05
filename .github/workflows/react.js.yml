@@ -1,0 +1,50 @@
+name: React.js CI
+
+on:
+  push:
+    branches: [ "production" ]
+    
+env:
+  CI: false
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Clean Install Dependencies
+      run: npm ci --force || npm install 
+
+    - name: Create .env file
+      run: |
+        echo "REACT_APP_API_KEY=${{ secrets.REACT_APP_API_KEY }}" >> .env
+        echo "REACT_APP_AUTH_DOMAIN=${{ secrets.REACT_APP_AUTH_DOMAIN }}" >> .env
+        echo "REACT_APP_PROJECT_ID=${{ secrets.REACT_APP_PROJECT_ID }}" >> .env
+        echo "REACT_APP_STORAGE_BUCKET=${{ secrets.REACT_APP_STORAGE_BUCKET }}" >> .env
+        echo "REACT_APP_MESSAGING_SENDER_ID=${{ secrets.REACT_APP_MESSAGING_SENDER_ID }}" >> .env
+        echo "REACT_APP_APP_ID=${{ secrets.REACT_APP_APP_ID }}" >> .env
+        echo "REACT_APP_MEASUREMENT_ID=${{ secrets.REACT_APP_MEASUREMENT_ID }}" >> .env
+    - name: Build
+      run: npm run build
+
+    - name: Copy build folder via SSH
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        port: ${{secrets.PORT}}
+        key: ${{secrets.KEY}}
+        source: ./build
+        target: ${{ secrets.PATH_TARGET }}
